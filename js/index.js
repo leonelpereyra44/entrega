@@ -28,11 +28,11 @@ if (mayorEdad(edad) === true){
             producto = prompt("Que desea comprar: 'vino' ó 'cigarro'?");
             switch(producto){
                 case 'vino':
-                    cantVino = parseInt(prompt("Cuantos vinos?"));
+                    cantVino += parseInt(prompt("Cuantos vinos?"));
                     totalProductos += vino*cantVino;
                     break;
                 case 'cigarro':
-                    cantCigarro = parseInt(prompt("Cuantos cigarros?"));
+                    cantCigarro += parseInt(prompt("Cuantos cigarros?"));
                     totalProductos += cigarro*cantCigarro;
                     break;
                 default:
