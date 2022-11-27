@@ -17,7 +17,9 @@ if (mayorEdad(edad) === true){
     let totalProductos = 0;
     let producto = '';
     let cantVino = 0;
+    let cantTotalVino = 0;
     let cantCigarro = 0;
+    let cantTotalCigarro = 0;
 
     let flag = prompt("Bienvenido, si desea comenzar ingrese 'si', sino ingrese 'esc'");
 
@@ -28,12 +30,14 @@ if (mayorEdad(edad) === true){
             producto = prompt("Que desea comprar: 'vino' ó 'cigarro'?");
             switch(producto){
                 case 'vino':
-                    cantVino += parseInt(prompt("Cuantos vinos?"));
+                    cantVino = parseInt(prompt("Cuantos vinos?"));
                     totalProductos += vino*cantVino;
+                    cantTotalVino += cantVino;
                     break;
                 case 'cigarro':
-                    cantCigarro += parseInt(prompt("Cuantos cigarros?"));
+                    cantCigarro = parseInt(prompt("Cuantos cigarros?"));
                     totalProductos += cigarro*cantCigarro;
+                    cantTotalCigarro += cantCigarro;
                     break;
                 default:
                     alert("Usted no ingresó un producto válido"); 
@@ -41,7 +45,7 @@ if (mayorEdad(edad) === true){
             }
             flag = prompt("Desea agregar mas productos ingrese 'si' ó 'esc' para salir");
         }
-        alert(`Usted va a comprar: ${cantVino} Vinos y ${cantCigarro} Cigarros por un total de: $${totalProductos} pesos`);
+        alert(`Usted va a comprar: ${cantTotalVino} Vinos y ${cantTotalCigarro} Cigarros por un total de: $${totalProductos} pesos`);
     }  else { 
         //Elimino la opcion de que ingrese una palabra no especificada
         alert("Si usted no es capaz de ingresar una opción correcta seguramente mintió en su edad, asi que el programa finalizará");
